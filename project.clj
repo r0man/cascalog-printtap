@@ -9,4 +9,5 @@
   :dependencies [[cascalog "1.10.0"]
                  [org.clojure/clojure "1.4.0"]]
   :source-paths ["src/clj"]
+  :test-paths ["test/clj"]
   :java-source-paths ["src/jvm"])
