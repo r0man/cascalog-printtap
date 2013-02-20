@@ -1,6 +1,6 @@
 (defproject cascalog-printtap "0.1.0-SNAPSHOT"
   :description "A Cascalog tap that prints tuples via Clojure's pr-str function."
-  :url "http://example.com/FIXME"
+  :url "https://github.com/r0man/cascalog-printtap"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories {"conjars" "http://conjars.org/repo/"
