@@ -11,8 +11,15 @@ import org.apache.hadoop.mapred.JobConf;
 
 public class Stdout extends StdoutTap {
 
+    String separator = " ";
+
     public Stdout() {
         super();
+    }
+
+    public Stdout(String separator) {
+        super();
+        this.separator = separator;
     }
 
     @Override
@@ -25,10 +32,12 @@ public class Stdout extends StdoutTap {
         while (it.hasNext()) {
             Var pr = RT.var("clojure.core", "pr-str");
             Iterator<Object> elements = it.next().getTuple().iterator();
+            System.out.print("[");
             while (elements.hasNext()) {
                 System.out.print(pr.invoke(elements.next()));
-                System.out.print("\t");
+                if (elements.hasNext()) System.out.print(separator);
             }
+            System.out.print("]");
             System.out.println();
         }
         System.out.println("-----------------------");

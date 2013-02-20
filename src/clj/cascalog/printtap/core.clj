@@ -3,4 +3,5 @@
 
 (defn stdout-prn
   "Like cascalog's `stdout` tap, but uses `prn`."
-  [] (Stdout.))
+  ([] (Stdout.))
+  ([separator] (Stdout. separator)))

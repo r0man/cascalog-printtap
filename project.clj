@@ -10,4 +10,5 @@
                  [org.clojure/clojure "1.4.0"]]
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]
-  :java-source-paths ["src/jvm"])
+  :java-source-paths ["src/jvm"]
+  :jvm-opts ["-XX:MaxPermSize=128m" "-Xmx1024m" "-XX:-UseGCOverheadLimit"])

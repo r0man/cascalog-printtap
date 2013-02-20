@@ -10,3 +10,9 @@
       (<- [?name ?age]
           (people ?name ?age)
           (< ?age 40))))
+
+(deftest test-stdout-prn-separator
+  (?- (stdout-prn "\t")
+      (<- [?name ?age]
+          (people ?name ?age)
+          (< ?age 40))))
