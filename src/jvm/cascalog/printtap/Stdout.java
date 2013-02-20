@@ -1,4 +1,4 @@
-package ad.nugg.tap;
+package cascalog.printtap;
 
 import cascading.flow.hadoop.HadoopFlowProcess;
 import cascading.tuple.TupleEntryIterator;
@@ -6,13 +6,12 @@ import clojure.lang.RT;
 import clojure.lang.Var;
 import com.twitter.maple.tap.StdoutTap;
 import java.io.IOException;
+import java.util.Iterator;
 import org.apache.hadoop.mapred.JobConf;
 
-public class PrintTap extends StdoutTap {
+public class Stdout extends StdoutTap {
 
-    private Var prn = RT.var("clojure.core", "prn");
-
-    public PrintTap() {
+    public Stdout() {
         super();
     }
 
@@ -24,7 +23,13 @@ public class PrintTap extends StdoutTap {
         System.out.println("RESULTS");
         System.out.println("-----------------------");
         while (it.hasNext()) {
-            prn.invoke(it.next().getTuple());
+            Var pr = RT.var("clojure.core", "pr-str");
+            Iterator<Object> elements = it.next().getTuple().iterator();
+            while (elements.hasNext()) {
+                System.out.print(pr.invoke(elements.next()));
+                System.out.print("\t");
+            }
+            System.out.println();
         }
         System.out.println("-----------------------");
         it.close();
