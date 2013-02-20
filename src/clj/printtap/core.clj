@@ -1,6 +1,6 @@
-(ns printtap.core)
+(ns printtap.core
+  (:import ad.nugg.tap.PrintTap))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn stdout-prn
+  "Like cascalog's `stdout` tap, but uses `prn`."
+  [] (ad.nugg.tap.PrintTap.))
