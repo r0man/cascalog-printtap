@@ -11,4 +11,5 @@
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]
   :java-source-paths ["src/jvm"]
-  :jvm-opts ["-XX:MaxPermSize=128m" "-Xmx1024m" "-XX:-UseGCOverheadLimit"])
+  :jvm-opts ["-XX:MaxPermSize=128m" "-Xmx1024m" "-XX:-UseGCOverheadLimit"]
+  :javac-options ["-target" "1.6" "-source" "1.6"])
