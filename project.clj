@@ -1,4 +1,4 @@
-(defproject cascalog-printtap "0.1.2-SNAPSHOT"
+(defproject cascalog-printtap "0.1.2"
   :description "A Cascalog tap that prints tuples via Clojure's pr-str function."
   :url "https://github.com/r0man/cascalog-printtap"
   :license {:name "Eclipse Public License"
