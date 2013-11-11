@@ -6,10 +6,11 @@
   :repositories {"conjars" "http://conjars.org/repo/"
                  "cloudera" "https://repository.cloudera.com/artifactory/cloudera-repos"}
   :profiles {:dev {:dependencies [[org.apache.hadoop/hadoop-core "0.20.2-cdh3u5"]]}}
-  :dependencies [[cascalog "1.10.1"]
+  :dependencies [[cascalog "2.0.0"]
                  [org.clojure/clojure "1.5.1"]]
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]
   :java-source-paths ["src/jvm"]
   :jvm-opts ["-XX:MaxPermSize=128m" "-Xmx1024m" "-XX:-UseGCOverheadLimit"]
-  :javac-options ["-target" "1.6" "-source" "1.6"])
+  :javac-options ["-target" "1.6" "-source" "1.6"]
+  :lein-release {:deploy-via :clojars})
